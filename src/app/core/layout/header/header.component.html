@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo con Font Awesome y Tailwind CSS</title>
+    <title>Font Awesome</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-
-<header class="border-b border-gray py-4">
+<header class="border-b border-gray py-2.5">
     <div class="container mx-auto flex justify-between items-center">
-        <div class="logo">
-            <a href="#" class="text-lg font-bold hover:text-green-600 transition duration-300">Inicio</a>
+        <div class="logo w-20 ml-0">
+          <img class="w-14 h-14 object-cover" src="../../../../assets/img/logo.svg" alt="Jean Frontal">
         </div>
-        <div class="ml-8 flex items-center border-b border-gray w-full">
+        <div class="ml-10 flex items-center border-b border-gray w-full">
           <input type="text" placeholder="Buscar..." class="px-4 py-2 bg-transparent border-none focus:outline-none text-black border-black flex-1">
           <button type="submit" class="px-4 py-2 bg-transparent border-none outline-none transition duration-300 hover:text-green-600">
               <span class="hover:text-green-600">
@@ -40,6 +38,5 @@
         </nav>
     </div>
 </header>
-
 </body>
 </html>
