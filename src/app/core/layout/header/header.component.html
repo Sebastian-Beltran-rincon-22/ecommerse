@@ -7,36 +7,57 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-<header class="border-b border-gray py-2.5 z-20 bg-white fixed w-full top-0 ">
+  <header class="border-b border-gray py-2.5 z-20 bg-white fixed w-full top-0">
     <div class="container mx-auto flex justify-between items-center">
-        <div class="logo w-20 ml-0">
-          <img class="w-14 h-14 object-cover" src="../../../../assets/img/logo.svg" alt="inicio" routerLink="/" >
-        </div>
-        <div class="ml-10 flex items-center border-b border-gray w-full">
-          <input type="text" placeholder="Buscar..." class="px-4 py-2 bg-transparent border-none focus:outline-none text-black border-black flex-1">
-          <button type="submit" class="px-4 py-2 bg-transparent border-none outline-none transition duration-300 hover:text-green-600">
-              <span class="hover:text-green-600">
-                  <i class="fas fa-search text-gray"></i>
-              </span>
-          </button>
+      <div class="logo w-20 ml-0">
+        <img class="w-14 h-14 object-cover" src="../../../../assets/img/logo.svg" alt="inicio" routerLink="/" >
       </div>
-        <nav class="navbar">
-            <ul class="flex">
-                <li class="ml-8"><button class="text-gray-800 font-semibold hover:text-green-600 transition duration-300 focus:outline-none" routerLink="/" >Hombres</button></li>
-                <li class="ml-8"><button class="text-gray-800 font-semibold hover:text-green-600 transition duration-300 focus:outline-none">Mujeres</button></li>
-                <li class="ml-8">
-                    <button class="text-gray-800 font-semibold hover:text-green-600 transition duration-300 focus:outline-none">
-                        <i class="fas fa-shopping-cart"></i>
-                    </button>
-                </li>
-                <li class="ml-8">
-                    <button class="text-gray-800 font-semibold hover:text-green-600 transition duration-300 focus:outline-none">
-                        <i class="fas fa-user-circle"></i>
-                    </button>
-                </li>
-            </ul>
-        </nav>
+      <button class="menu-toggle block px-2 border border-none rounded lg:hidden focus:outline-none" (click)="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="ml-4 flex items-center lg:border-b md:border-b border-gray lg:w-full xl:w-full md:w-full ">
+        <!-- Utilizando clases condicionales para mostrar/ocultar la barra de búsqueda y la línea -->
+        <input type="text" placeholder="Buscar..."
+              [ngClass]="{'px-4 py-2 bg-transparent border-none focus:outline-none text-black border-black flex-1 md:block hidden': !searchBarVisible}"
+              class="px-4 py-2 bg-transparent border-none focus:outline-none text-black border-black flex-1 md:block hidden"
+        >
+        <button type="submit" class="px-4 py-2 bg-transparent border-none outline-none transition duration-300 hover:text-green-600"
+                (click)="toggleSearchBar()">
+          <span class="hover:text-green-600">
+            <i class="fas fa-search text-gray"></i>
+          </span>
+        </button>
+      </div>
+      <nav class="navbar hidden lg:flex">
+        <ul class="flex">
+          <li class="ml-8"><button class="text-gray-800 font-semibold hover:text-green-600 transition duration-300 focus:outline-none" routerLink="/">Hombres</button></li>
+          <li class="ml-8"><button class="text-gray-800 font-semibold hover:text-green-600 transition duration-300 focus:outline-none">Mujeres</button></li>
+          <li class="ml-8">
+            <button class="text-gray-800 font-semibold hover:text-green-600 transition duration-300 focus:outline-none">
+              <i class="fas fa-user-circle"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <ul>
+        <li class="ml-8">
+          <button class="text-gray-800 font-semibold hover:text-green-600 transition duration-300 focus:outline-none md:transform translate-x-[-8px]">
+            <i class="fas fa-shopping-cart"></i>
+          </button>
+        </li>
+      </ul>
+
     </div>
-</header>
-</body>
-</html>
+    <!-- Menú hamburguesa para pantallas pequeñas -->
+    <nav class="menu-mobile hidden lg:hidden" [class.hidden]="!isMenuOpen">
+      <ul class="flex flex-col items-center border-none">
+        <li class="my-2"><button class="text-gray-800 font-semibold hover:text-green-600 transition duration-300 focus:outline-none" routerLink="/">Hombres</button></li>
+        <li class="my-2"><button class="text-gray-800 font-semibold hover:text-green-600 transition duration-300 focus:outline-none">Mujeres</button></li>
+        <li class="my-2">
+          <button class="text-gray-800 font-semibold hover:text-green-600 transition duration-300 focus:outline-none">
+              <i class="fas fa-user-circle"></i>
+          </button>
+      </ul>
+    </nav>
+  </header>
+
