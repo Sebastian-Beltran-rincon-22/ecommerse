@@ -19,7 +19,8 @@ import { FooterComponent } from './layout/footer/footer.component';
   ],
   exports:[
     AsideComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ]
 })
 export class CoreModule { }
