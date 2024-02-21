@@ -4,6 +4,9 @@ import { ModalComponent } from './libs/modal/modal.component';
 import { AsideComponent } from './layout/aside/aside.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -16,6 +19,9 @@ import { FooterComponent } from './layout/footer/footer.component';
   ],
   imports: [
     CommonModule,
+    RouterModule,
+    HttpClientModule,
+    FormsModule
   ],
   exports:[
     AsideComponent,
