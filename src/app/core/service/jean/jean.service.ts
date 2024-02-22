@@ -61,6 +61,15 @@ export class JeanService {
       color: 'azul',
     },
 
+    {
+      imagenDelantera: 'https://static.wixstatic.com/media/9c4385_7830a27c55f64d56984f0d99fa63451e~mv2.png/v1/fill/w_480,h_596,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/9c4385_7830a27c55f64d56984f0d99fa63451e~mv2.png',
+      imagenTrasera: 'https://acdn.mitiendanube.com/stores/001/421/402/products/dsc_3697-dd187dba2a4a7cff5a16960012960231-480-0.jpg',
+      nombreJean: 'Jean ancho casual',
+      precio: 45.99,
+      talla: 'S',
+      color: 'negro',
+    },
+
     ];
 
     return of(mockData);
