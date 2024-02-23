@@ -10,11 +10,11 @@
               d="M15 19l-7-7 7-7"></path>
       </svg>
     </button>
-    <div class="image-container2 relative flex justify-center overflow-hidden" style="height: 30rem">
-      <div class="flex transition-transform ease-in-out duration-300 transform w-full h-full" [ngStyle]="{'transform': 'translateX(' + (-currentIndex * (100 / visibleImages)) + '%)'}">
-        <ng-container *ngFor="let jeanData of visibleJeanDataList">
-          <div class="card-container relative m-2 rounded-md">
-            <img class="rounded-md w-full h-full object-cover transition-transform ease-in-out duration-300 transform" src="{{ jeanData.imagenDelantera }}" alt="jean trasero">
+    <div class="flex justify-center overflow-hidden h-auto">
+      <div class="flex transition-transform ease-in-out duration-300 transform w-100 h-full" [ngStyle]="transformStyle">
+        <ng-container *ngFor="let jeanData of visibleJeanDataList" class="carrusel-item">
+          <div class="card-container relative m-2 rounded-md h-100 w-full">
+            <img loading="lazy" class="rounded-md w-full h-full object-cover transition-transform ease-in-out duration-300 transform" src="{{ jeanData.imagenDelantera }}" alt="jean trasero">
             <div class="details absolute bottom-0 left-0 right-0 p-4 bg-white opacity-80">
               <h2 class="text-lg font-semibold mb-2">{{ jeanData.nombreJean }}</h2>
               <p class="text-gray-700 font-semibold text-lg mb-2">${{ jeanData.precio }}</p>
