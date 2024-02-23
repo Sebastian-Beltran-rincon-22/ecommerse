@@ -6,17 +6,18 @@ import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { CoreModule } from './core/core.module';
+import { ErrorsModule } from './errors/errors.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     PagesModule,
+    ErrorsModule,
     HttpClientModule,
     FormsModule,
   ],
