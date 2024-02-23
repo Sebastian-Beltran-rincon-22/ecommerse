@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ViewComponent } from './view/view.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     LoginComponent,
     PantsComponent,
-    ViewComponent
+    ViewComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
