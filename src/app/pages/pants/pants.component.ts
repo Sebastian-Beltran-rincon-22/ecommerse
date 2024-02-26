@@ -8,14 +8,23 @@ import {JeanService} from 'src/app/core/service/jean/jean.service'
 })
 export class PantsComponent {
 
+  coloresDisponibles: string[] = [];
   jeanDataList: any;
 
   constructor(private jeanService: JeanService){}
 
   ngOnInit(): void {
+    this.jeanService.coloresDisponibles$.subscribe(colores => {
+      this.coloresDisponibles = colores;
+    });
+
     this.jeanService.getJeanData().subscribe(dataList => {
       this.jeanDataList = dataList;
     });
+  }
+
+  getBackgroundColorClass(color: string): string {
+    return `bg-${color}-500`;
   }
 
 }

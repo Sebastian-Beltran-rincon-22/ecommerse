@@ -23,6 +23,9 @@
           <img class="absolute top-0 left-0 w-full h-full object-cover" src="{{ jeanData.imagenDelantera }}" alt="Jean Frontal" href="view/rutadinamica">
           <img class="opacity-0 absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 hover:opacity-100" src="{{ jeanData.imagenTrasera }}" alt="Jean Trasero" href="view/rutadinamica">
         </div>
+        <div class="absolute top-0 right-0 m-2 bg-green-500 text-white px-2 py-1 rounded-md">
+          Nuevo
+        </div>
         <div class="p-4 bg-white relative z-10 flex flex-col items-start h-full">
           <div class="flex justify-between w-full">
             <h3 class="text-lg font-semibold">{{jeanData.nombreJean}}</h3>
@@ -30,9 +33,7 @@
           </div>
           <p class="text-sm text-gray-600">Colores:</p>
           <ul class="flex">
-            <div [ngClass]="{ 'bg-blue-500': jeanData.color === 'azul' }" class="w-4 h-4 rounded-full cursor-pointer"></div>
-            <div [ngClass]="{ 'bg-black': jeanData.color === 'negro' }" class="ml-2 w-4 h-4 rounded-full cursor-pointer"></div>
-            <div [ngClass]="{ 'bg-gray-500': jeanData.color === 'gris' }" class="ml-2 w-4 h-4 rounded-full cursor-pointer"></div>
+            <div *ngFor="let color of coloresDisponibles" [ngClass]="getBackgroundColorClass(color)" class="ml-2 w-4 h-4 rounded-full cursor-pointer"></div>
           </ul>
           <p class="text-sm text-gray-600">Tallas: {{ jeanData.talla }}</p>
         </div>

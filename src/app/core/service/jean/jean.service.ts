@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class JeanService {
       nombreJean: 'Jean ancho casual',
       precio: 39.99,
       talla: 'M',
-      color: 'azul',
+      color: 'blue',
     },
     {
       imagenDelantera: 'https://cdnimg.emmiol.com/E/202212/img_original-CCL0344BO-2902401125.jpg',
@@ -23,7 +23,7 @@ export class JeanService {
       nombreJean: 'Jean ancho casual estilo 90s',
       precio: 50.99,
       talla: 'L',
-      color: 'negro',
+      color: 'black',
     },
 
     {
@@ -32,7 +32,7 @@ export class JeanService {
       nombreJean: 'Jean casual',
       precio: 20.99,
       talla: 'S',
-      color: 'gris',
+      color: 'gray',
     },
 
     {
@@ -41,7 +41,7 @@ export class JeanService {
       nombreJean: 'Jean casual',
       precio: 20.99,
       talla: 'S',
-      color: 'gris',
+      color: 'gray',
     },
 
     {
@@ -50,7 +50,7 @@ export class JeanService {
       nombreJean: 'Jean unisex',
       precio: 18.50,
       talla: 'Xl',
-      color: 'azul',
+      color: 'blue',
     },
     {
       imagenDelantera: 'https://img4.dhresource.com/webp/m/0x0/f3/albu/km/g/06/0fcb33be-698d-4042-8b0a-4e18ac51cc78.jpg',
@@ -58,7 +58,7 @@ export class JeanService {
       nombreJean: 'Jean ancho casual',
       precio: 39.99,
       talla: 'M',
-      color: 'azul',
+      color: 'blue',
     },
 
     {
@@ -67,12 +67,31 @@ export class JeanService {
       nombreJean: 'Jean ancho casual',
       precio: 45.99,
       talla: 'S',
-      color: 'negro',
+      color: 'green',
+    },
+
+    {
+      imagenDelantera: 'https://img.ws.mms.shopee.com.co/fe313ababaa08b3c7615d33fd198ff75',
+      imagenTrasera: 'https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/8cd294ac6275a3bc7eb8d06b81e5e362.jpg?imageView2/2/w/500/q/60/format/webp',
+      nombreJean: 'Jean unisex',
+      precio: 18.50,
+      talla: 'Xl',
+      color: 'yellow',
     },
 
     ];
 
     return of(mockData);
+  };
+
+  private coloresDisponiblesSubject = new BehaviorSubject<string[]>(['blue', 'black', 'gray', 'green', 'yellow']);
+  coloresDisponibles$ = this.coloresDisponiblesSubject.asObservable();
+
+  agregarColor(nuevoColor: string): void {
+    const coloresActuales = this.coloresDisponiblesSubject.value;
+    if (!coloresActuales.includes(nuevoColor)) {
+      this.coloresDisponiblesSubject.next([...coloresActuales, nuevoColor]);
+    }
   }
 
 }
