@@ -23,9 +23,7 @@
     <div class="mb-4">
       <h3 class="text-sm font-semibold mb-2">Color</h3>
       <ul class="flex">
-        <div id="colorBall" class="ml-2 w-6 h-6 rounded-full bg-blue-500 cursor-pointer"></div>
-        <div id="colorBall" class="ml-2 w-6 h-6 rounded-full bg-black cursor-pointer"></div>
-        <div id="colorBall" class="ml-2 w-6 h-6 rounded-full bg-gray-500 cursor-pointer"></div>
+        <div *ngFor="let color of coloresDisponibles" [ngClass]="getBackgroundColorClass(color)" class="ml-2 w-6 h-6 rounded-full cursor-pointer border border-gray-500"></div>
       </ul>
     </div>
 
