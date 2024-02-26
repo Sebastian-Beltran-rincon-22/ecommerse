@@ -6,6 +6,7 @@ import { ViewComponent } from './pages/view/view.component';
 import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 const routes: Routes = [
 
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'view/rutadinamica',component: ViewComponent},
   {path:'login',component: LoginComponent},
   {path:'register',component: RegisterComponent},
+  {path:'admin',component: DashboardComponent},
 
 
   //pages not found
