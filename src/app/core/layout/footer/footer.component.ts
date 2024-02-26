@@ -11,7 +11,7 @@ export class FooterComponent {
   currentIndex: number = 0;
   jeanDataList: any;
   visibleJeanDataList: any;
-  visibleImages: number = 3 ; // Ajusta según tu necesidad
+  visibleImages: number = 4 ; // Ajusta según tu necesidad
   transformStyle: any;
 
 
@@ -58,7 +58,7 @@ export class FooterComponent {
     } else if (windowWidth < 1024) {
       this.visibleImages = 2; // Muestra dos tarjetas en pantallas medianas
     } else {
-      this.visibleImages = 3; // Muestra tres tarjetas en pantallas más grandes
+      this.visibleImages = 4; // Muestra tres tarjetas en pantallas más grandes
     }
 
     // Asegúrate de que el índice y los datos visibles se actualicen

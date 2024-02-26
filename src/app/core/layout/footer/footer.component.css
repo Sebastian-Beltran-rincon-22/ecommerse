@@ -1,0 +1,7 @@
+/* Estilos para pantallas pequeñas (menos de 600px de ancho) */
+@media screen and (max-width: 600px){
+  .image-carrusel{
+    height: 20rem;
+    width: 15rem;
+  }
+}
