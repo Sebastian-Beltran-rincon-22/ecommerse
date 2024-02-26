@@ -9,6 +9,7 @@ import { ViewComponent } from './view/view.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 
@@ -19,7 +20,8 @@ import { RegisterComponent } from './register/register.component';
     LoginComponent,
     PantsComponent,
     ViewComponent,
-    RegisterComponent
+    RegisterComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,
