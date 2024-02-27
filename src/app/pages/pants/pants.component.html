@@ -31,10 +31,8 @@
             <h3 class="text-lg sm:text-base md:text-lg lg:text-xl xl:text-lg font-semibold">{{jeanData.nombreJean}}</h3>
             <p class="text-xl sm:text-base md:text-xl lg:text-2xl xl:text-xl font-bold">{{ jeanData.precio | currency }}</p>
           </div>
-          <p class="text-sm text-gray-600 hidden sm:block">Colores:</p>
-          <ul class="flex">
-            <div *ngFor="let color of coloresDisponibles" [ngClass]="getBackgroundColorClass(color)" class="ml-2 w-4 h-4 rounded-full cursor-pointer border border-gray-500 hidden sm:block"></div>
-          </ul>
+          <p class="text-sm text-gray-600 hidden sm:block">Color:</p>
+          <div [ngClass]="getBackgroundColorClass(jeanData.color)" class="ml-2 w-4 h-4 rounded-full cursor-pointer border border-gray-500 hidden sm:block"></div>
           <p class="text-sm text-gray-600 hidden sm:block">Tallas: {{ jeanData.talla }}</p>
         </div>
       </div>

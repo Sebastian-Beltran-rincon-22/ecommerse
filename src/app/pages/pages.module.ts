@@ -10,6 +10,11 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { MyprofileComponent } from './profile/myprofile/myprofile.component';
+import { AddressesComponent } from './profile/addresses/addresses.component';
+import { OrdersComponent } from './profile/orders/orders.component';
+import { AccountComponent } from './profile/account/account.component';
 
 
 
@@ -21,7 +26,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     PantsComponent,
     ViewComponent,
     RegisterComponent,
-    DashboardComponent
+    DashboardComponent,
+    ResetPasswordComponent,
+    MyprofileComponent,
+    AddressesComponent,
+    OrdersComponent,
+    AccountComponent,
   ],
   imports: [
     CommonModule,

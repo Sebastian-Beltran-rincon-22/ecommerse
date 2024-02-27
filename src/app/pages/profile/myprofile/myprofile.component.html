@@ -1,0 +1,11 @@
+<body class="font-sans ">
+        <div class="flex items-start w-full flex-row justify-between mr-[35rem]">
+          <h1 class="text-gray-800 font-semibold text-2xl">Perfil</h1>
+          <button class="text-gray-800 font-semibold">Editar</button>
+        </div>
+        <div *ngIf="datosPerfil$ | async as datosPerfil" class="bg-gray-50 mt-4">
+        <p class="text-gray-400 mb-2 mt-2">correo: {{datosPerfil.correo}}</p>
+        <p class="text-gray-400 mb-2">celular: {{datosPerfil.celular}}</p>
+        <p class="text-gray-400 mb-2">identificación: {{datosPerfil.identificacion}}</p>
+        </div>
+</body>
