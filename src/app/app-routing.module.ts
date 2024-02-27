@@ -7,6 +7,11 @@ import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.co
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
+import { AccountComponent } from './pages/profile/account/account.component';
+import { MyprofileComponent } from './pages/profile/myprofile/myprofile.component';
+import { AddressesComponent } from './pages/profile/addresses/addresses.component';
+import { OrdersComponent } from './pages/profile/orders/orders.component';
 
 const routes: Routes = [
 
@@ -16,7 +21,12 @@ const routes: Routes = [
   {path:'login',component: LoginComponent},
   {path:'register',component: RegisterComponent},
   {path:'admin',component: DashboardComponent},
-
+  {path:'reset-password',component:ResetPasswordComponent},
+  {path:'account',component:AccountComponent,children:[
+    {path:'myprofile',component:MyprofileComponent,outlet: 'myOutlet'},
+    {path:'adress',component:AddressesComponent,outlet:'adreOutlet'},
+    {path:'orders',component:OrdersComponent, outlet:'dersOutlet'}
+  ]},
 
   //pages not found
   {path:'**',component: PageNotFoundComponent}
